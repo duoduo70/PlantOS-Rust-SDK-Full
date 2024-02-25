@@ -11,7 +11,6 @@
 !src/**
 !.gitignore
 !Cargo.toml
-!i686-unknown-plantos.json
 !Makefile
 !README.md
 !run.sh
@@ -19,5 +18,3 @@
 !.gitmodules
 !libc
 !libc/**
-!alloc
-!alloc/**
