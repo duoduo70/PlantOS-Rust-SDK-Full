@@ -1,0 +1,19 @@
+[package]
+name = "my_prog"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libc = {path = "./libc"}
+
+[lib]
+name = "std"
+crate-type = ["staticlib"]
+path = "src/lib.rs"
+
+[profile.release]
+strip = true
+lto = true
+panic = "abort"
