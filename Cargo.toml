@@ -9,7 +9,7 @@ edition = "2021"
 libc = {path = "./libc"}
 
 [lib]
-name = "std"
+name = "mprog"
 crate-type = ["staticlib"]
 path = "src/lib.rs"
 
