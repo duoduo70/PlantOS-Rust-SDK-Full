@@ -1,9 +1,7 @@
 {
-    "rust-analyzer.cargo.target": "i686-unknown-linux-gnu",
+    "rust-analyzer.cargo.target": "i686-unknown-linux-musl",
     "files.associations": {
         "*.gl": "lisp",
-        "cstdint": "c",
-        "ctype.h": "c",
-        "ctypes.h": "c"
-    }
+        "stdio.h": "c"
+    },
 }

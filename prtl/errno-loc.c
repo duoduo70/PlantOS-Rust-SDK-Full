@@ -3,8 +3,7 @@
 
 int *__errno_location (void)
 {
-#ifdef DEBUG
-    logkf("__errno_location\n");
-#endif
+  PRTL_DEBUG_INCLUDE_CURRENT_FUNC
+
   return &errno;
 }

@@ -13,10 +13,9 @@
 !Cargo.toml
 !Makefile
 !README.md
-!run.sh
 !LICENSE
 !.gitmodules
 !libc
 !libc/**
-!ptl
-!ptl/**
+!prtl
+!prtl/**

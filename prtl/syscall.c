@@ -35,14 +35,20 @@
 
 void sys_exit(int retcode)
 {
+    PRTL_DEBUG_INCLUDE_CURRENT_FUNC
+
     exit();
 }
 int sys_fork()
 {
+    PRTL_DEBUG_INCLUDE_CURRENT_FUNC
+
     return fork();
 }
 ssize_t sys_read(int fd, void *buf, size_t count)
 {
+    PRTL_DEBUG_INCLUDE_CURRENT_FUNC
+
     if (fd == 0) {
         return read((int)stdin, buf, count);
     } else if (fd == 1) {
@@ -56,6 +62,8 @@ ssize_t sys_read(int fd, void *buf, size_t count)
 }
 ssize_t sys_write(int fd, const void *buf, size_t count)
 {
+    PRTL_DEBUG_INCLUDE_CURRENT_FUNC
+
     if (fd == 0) {
         return write((int)stdin, buf, count);
     } else if (fd == 1) {
@@ -68,10 +76,14 @@ ssize_t sys_write(int fd, const void *buf, size_t count)
 }
 int sys_open(const char *pathname, int flags)
 {
+    PRTL_DEBUG_INCLUDE_CURRENT_FUNC
+
     return open(pathname, flags);
 }
 int sys_close(int fd)
 {
+    PRTL_DEBUG_INCLUDE_CURRENT_FUNC
+
     if (fd == 0) {
         return close((int)stdin);
     } else if (fd == 1) {
@@ -85,6 +97,8 @@ int sys_close(int fd)
 }
 int sys_lseek(int fd, off_t offset, int whence)
 {
+    PRTL_DEBUG_INCLUDE_CURRENT_FUNC
+
     if (fd == 0) {
         return lseek((int)stdin, offset, whence);
     } else if (fd == 1) {
@@ -98,6 +112,8 @@ int sys_lseek(int fd, off_t offset, int whence)
 
 void *syscall(int num, ...)
 {
+    PRTL_DEBUG_INCLUDE_CURRENT_FUNC
+
 #ifdef DEBUG
     logkf("syscall: %d\n", num);
 #endif

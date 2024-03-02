@@ -172,22 +172,16 @@ extern void _Unwind_SjLj_Resume(_Unwind_Exception *exception_object);
 #else
 _Unwind_Reason_Code _Unwind_RaiseException(_Unwind_Exception *exception_object)
 {
-#ifdef DEBUG
-    printf("_Unwind_RaiseException\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 void _Unwind_Resume(_Unwind_Exception *exception_object)
 {
-#ifdef DEBUG
-    printf("_Unwind_Resume\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 #endif
 void _Unwind_DeleteException(_Unwind_Exception *exception_object)
 {
-#ifdef DEBUG
-    printf("_Unwind_DeleteException\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 #if defined(_LIBUNWIND_ARM_EHABI)
 typedef enum {
@@ -233,27 +227,19 @@ _Unwind_VRS_Pop(_Unwind_Context *context, _Unwind_VRS_RegClass regclass,
 
 uintptr_t _Unwind_GetGR(struct _Unwind_Context *context, int index)
 {
-#ifdef DEBUG
-    printf("_Unwind_GetGR\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 void _Unwind_SetGR(struct _Unwind_Context *context, int index, uintptr_t new_value)
 {
-#ifdef DEBUG
-    printf("_Unwind_SetGR\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 uintptr_t _Unwind_GetIP(struct _Unwind_Context *context)
 {
-#ifdef DEBUG
-    printf("_Unwind_GetIP\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 void _Unwind_SetIP(struct _Unwind_Context *, uintptr_t new_value)
 {
-#ifdef DEBUG
-    printf("_Unwind_SetIP\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 
 #else  // defined(_LIBUNWIND_ARM_EHABI)
@@ -299,15 +285,11 @@ void _Unwind_SetIP(struct _Unwind_Context *context, uintptr_t value) {
 
 uintptr_t _Unwind_GetRegionStart(struct _Unwind_Context *context)
 {
-#ifdef DEBUG
-    printf("_Unwind_GetRegionStart\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 uintptr_t _Unwind_GetLanguageSpecificData(struct _Unwind_Context *context)
 {
-#ifdef DEBUG
-    printf("_Unwind_GetLanguageSpecificData\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 #ifdef __USING_SJLJ_EXCEPTIONS__
 extern _Unwind_Reason_Code
@@ -317,9 +299,7 @@ extern _Unwind_Reason_Code
 _Unwind_Reason_Code _Unwind_ForcedUnwind(_Unwind_Exception *exception_object,
                          _Unwind_Stop_Fn stop, void *stop_parameter)
 {
-#ifdef DEBUG
-    printf("_Unwind_ForcedUnwind\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 #endif
 
@@ -342,9 +322,7 @@ extern _Unwind_Reason_Code
 #else
 _Unwind_Reason_Code _Unwind_Resume_or_Rethrow(_Unwind_Exception *exception_object)
 {
-#ifdef DEBUG
-    printf("_Unwind_Resume_or_Rethrow\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 #endif
 
@@ -355,9 +333,7 @@ typedef _Unwind_Reason_Code (*_Unwind_Trace_Fn)(struct _Unwind_Context *,
                                                 void *);
 _Unwind_Reason_Code _Unwind_Backtrace(_Unwind_Trace_Fn, void *)
 {
-#ifdef DEBUG
-    printf("_Unwind_Backtrace\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 
 // _Unwind_GetCFA is a gcc extension that can be called from within a
@@ -365,9 +341,7 @@ _Unwind_Reason_Code _Unwind_Backtrace(_Unwind_Trace_Fn, void *)
 // current frame.
 uintptr_t _Unwind_GetCFA(struct _Unwind_Context *)
 {
-#ifdef DEBUG
-    printf("_Unwind_GetCFA\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 
 
@@ -380,9 +354,7 @@ uintptr_t _Unwind_GetCFA(struct _Unwind_Context *)
 uintptr_t _Unwind_GetIPInfo(struct _Unwind_Context *context,
                                    int *ipBefore)
 {
-#ifdef DEBUG
-    printf("_Unwind_GetIPInfo\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 
 
@@ -394,15 +366,11 @@ uintptr_t _Unwind_GetIPInfo(struct _Unwind_Context *context,
 // In 10.6 and later it does register properly.
 void __register_frame(const void *fde)
 {
-#ifdef DEBUG
-    printf("__register_frame\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 void __deregister_frame(const void *fde)
 {
-#ifdef DEBUG
-    printf("__deregister_frame\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 
 // _Unwind_Find_FDE() will locate the FDE if the pc is in some function that has
@@ -417,9 +385,7 @@ struct dwarf_eh_bases {
 };
 const void *_Unwind_Find_FDE(const void *pc, struct dwarf_eh_bases *)
 {
-#ifdef DEBUG
-    printf("_Unwind_Find_FDE\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 
 
@@ -430,9 +396,7 @@ const void *_Unwind_Find_FDE(const void *pc, struct dwarf_eh_bases *)
 // _Unwind_Find_FDE() and look at the dwarf_eh_bases.func result.
 void *_Unwind_FindEnclosingFunction(void *pc)
 {
-#ifdef DEBUG
-    printf("_Unwind_FindEnclosingFunction\n");
-#endif  
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 
 // Mac OS X does not support text-rel and data-rel addressing so these functions
@@ -440,16 +404,12 @@ void *_Unwind_FindEnclosingFunction(void *pc)
 uintptr_t _Unwind_GetDataRelBase(struct _Unwind_Context *context)
     LIBUNWIND_UNAVAIL
 {
-#ifdef DEBUG
-    printf("_Unwind_GetDataRelBase\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 uintptr_t _Unwind_GetTextRelBase(struct _Unwind_Context *context)
     LIBUNWIND_UNAVAIL
 {
-#ifdef DEBUG
-    printf("_Unwind_GetTextRelBase\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 
 // Mac OS X 10.4 and 10.5 had implementations of these functions in
@@ -458,52 +418,38 @@ uintptr_t _Unwind_GetTextRelBase(struct _Unwind_Context *context)
 void __register_frame_info_bases(const void *fde, void *ob, void *tb,
                                         void *db) LIBUNWIND_UNAVAIL
 {
-#ifdef DEBUG
-    printf("__register_frame_info_bases\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 void __register_frame_info(const void *fde, void *ob)
     LIBUNWIND_UNAVAIL
 {
-#ifdef DEBUG
-    printf("__register_frame_info\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 void __register_frame_info_table_bases(const void *fde, void *ob,
                                               void *tb, void *db)
     LIBUNWIND_UNAVAIL
 {
-#ifdef DEBUG
-    printf("__register_frame_info_table_bases\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 void __register_frame_info_table(const void *fde, void *ob)
     LIBUNWIND_UNAVAIL
 {
-#ifdef DEBUG
-    printf("__register_frame_info_table\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 void __register_frame_table(const void *fde)
     LIBUNWIND_UNAVAIL
 {
-#ifdef DEBUG
-    printf("__register_frame_table\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 void *__deregister_frame_info(const void *fde)
     LIBUNWIND_UNAVAIL
 {
-#ifdef DEBUG
-    printf("__deregister_frame_info\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 void *__deregister_frame_info_bases(const void *fde)
     LIBUNWIND_UNAVAIL
 {
-#ifdef DEBUG
-    printf("__deregister_frame_info_bases\n");
-#endif
+PRTL_DEBUG_INCLUDE_CURRENT_FUNC
 }
 
 #if defined(__SEH__) && !defined(__USING_SJLJ_EXCEPTIONS__)

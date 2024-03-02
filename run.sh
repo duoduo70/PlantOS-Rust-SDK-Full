@@ -1,2 +1,0 @@
-make build &&
-make run
